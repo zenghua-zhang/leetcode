@@ -44,22 +44,4 @@ public class SwapNodesinPairs {
 
         return next;
     }
-    
-    
-    private ListNode swap(ListNode node,boolean flag){
-        if(node == null){
-            return null;
-        }
-        if(node.next == null){
-            return node;
-        }
-
-        ListNode tmp = node.next.next;
-        ListNode next = node.next;
-        next.next = node;
-        node.next = swap(tmp,false);
-        
-        
-        return next;
-    }
 }
