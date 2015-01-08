@@ -25,8 +25,8 @@ public class RotateImage {
             int tmpCol = col;
             while (tmpCol >= 0) {
                 int tmp = matrix[row][tmpCol];
-                matrix[row][tmpCol] = matrix[len - tmpCol][row - len];
-                matrix[tmpCol][row] = tmp;
+                matrix[row][tmpCol] = matrix[len - 1 - tmpCol][len - 1 - row ];
+                matrix[len - 1 - tmpCol][len - 1 - row ] = tmp;
                 tmpCol--;
             }
             row++;
