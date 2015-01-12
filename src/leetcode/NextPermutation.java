@@ -6,11 +6,6 @@ import java.util.Collections;
 import junit.framework.TestCase;
 
 public class NextPermutation extends TestCase {
-    // public void testReverse(){
-    // int[] num = new int[]{1,2,3};
-    // reverse();
-    // }
-
     public void nextPermutation(int[] num) {
         if (num.length < 2) {
             return;
