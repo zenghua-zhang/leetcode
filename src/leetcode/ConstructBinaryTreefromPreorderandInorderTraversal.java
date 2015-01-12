@@ -30,7 +30,7 @@ public class ConstructBinaryTreefromPreorderandInorderTraversal {
             }
         }
         node.left = build(preorder,inorder,p_s+1,p_s+pos-i_s,i_s,pos-1);
-        node.left = build(preorder,inorder,p_s+pos-i_s+1,p_e,pos+1,i_e);
+        node.right = build(preorder,inorder,p_s+pos-i_s+1,p_e,pos+1,i_e);
 
         return node;
     }
