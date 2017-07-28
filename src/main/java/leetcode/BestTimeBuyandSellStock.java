@@ -1,7 +1,5 @@
 package leetcode;
 
-import java.util.Arrays;
-
 public class BestTimeBuyandSellStock {
     public int maxProfit(int[] prices) {
         if (prices.length == 0 || prices.length == 1) {

@@ -1,8 +1,5 @@
 package leetcode;
 
-import java.util.Arrays;
-import java.util.Collections;
-
 import junit.framework.TestCase;
 
 public class NextPermutation extends TestCase {

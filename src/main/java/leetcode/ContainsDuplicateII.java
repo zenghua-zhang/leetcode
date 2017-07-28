@@ -12,7 +12,7 @@ public class ContainsDuplicateII {
                     return true;
                 }
             }
-
+ 
             map.put(nums[i], i);
         }
 
