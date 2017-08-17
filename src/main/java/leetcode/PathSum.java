@@ -1,5 +1,7 @@
 package leetcode;
 
+import model.TreeNode;
+
 public class PathSum {
     public boolean hasPathSum(TreeNode root, int sum) {
         return hasSum(root, sum, 0);

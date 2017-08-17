@@ -3,6 +3,7 @@ package leetcode;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import model.TreeNode;
 
 public class LowestCommonAncestorofaBinaryTree {
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {

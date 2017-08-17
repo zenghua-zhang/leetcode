@@ -1,5 +1,7 @@
 package leetcode;
 
+import model.TreeNode;
+
 public class ConstructStringfromBinaryTree {
 
   public String tree2str(TreeNode t) {

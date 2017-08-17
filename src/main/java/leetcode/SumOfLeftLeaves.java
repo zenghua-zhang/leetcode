@@ -1,5 +1,7 @@
 package leetcode;
 
+import model.TreeNode;
+
 public class SumOfLeftLeaves {
     public int sumOfLeftLeaves(TreeNode root) {
         return helper(root, false);

@@ -1,6 +1,7 @@
 package leetcode;
 
 import java.util.Arrays;
+import model.TreeNode;
 
 public class ConstructBinaryTreefromPreorderandInorderTraversal {
     public static void main(String[] args){

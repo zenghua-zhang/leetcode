@@ -2,6 +2,7 @@ package leetcode;
 
 import java.util.ArrayList;
 import java.util.List;
+import model.TreeNode;
 
 public class BinaryTreePaths {
     public List<String> binaryTreePaths(TreeNode root) {

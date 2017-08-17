@@ -5,7 +5,6 @@ import java.util.List;
 
 public class SpiralMatrix {
     public List<Integer> spiralOrder(int[][] matrix) {
-        int xstart = 0, ystart = 0;
         int xend = matrix.length, yend = matrix[0].length;
 
         List<Integer> list = new ArrayList<Integer>();
@@ -19,7 +18,6 @@ public class SpiralMatrix {
         if (ystart > yend || xstart > xend) {
             return;
         }
-        int t = xstart;
     }
 
     public static void main(String[] args) {

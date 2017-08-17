@@ -1,5 +1,7 @@
 package leetcode;
 
+import model.TreeNode;
+
 public class LowestCommonAncestorofaBinarySearchTree {
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
         if (null == root || p == null || q == null) {

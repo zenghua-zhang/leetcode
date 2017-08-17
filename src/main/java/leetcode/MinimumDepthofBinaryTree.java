@@ -1,5 +1,7 @@
 package leetcode;
 
+import model.TreeNode;
+
 public class MinimumDepthofBinaryTree {
     public int minDepth(TreeNode root) {
         if (root == null) {

@@ -1,5 +1,7 @@
 package leetcode;
 
+import model.TreeNode;
+
 public class SymmetricTree_Recursively {
     public boolean isSymmetric(TreeNode root) {
         if (root == null) {

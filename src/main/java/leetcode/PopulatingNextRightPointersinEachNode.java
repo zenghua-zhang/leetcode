@@ -1,5 +1,7 @@
 package leetcode;
 
+import model.TreeLinkNode;
+
 public class PopulatingNextRightPointersinEachNode {
     public void connect(TreeLinkNode root) {
         if (root == null || root.left == null || root.right == null) {

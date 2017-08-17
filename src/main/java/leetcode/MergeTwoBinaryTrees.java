@@ -1,5 +1,7 @@
 package leetcode;
 
+import model.TreeNode;
+
 public class MergeTwoBinaryTrees {
     public TreeNode mergeTrees(TreeNode t1, TreeNode t2) {
         if (null == t1 && null == t2) {

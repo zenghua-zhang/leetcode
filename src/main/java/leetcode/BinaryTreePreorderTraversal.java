@@ -3,6 +3,7 @@ package leetcode;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+import model.TreeNode;
 
 public class BinaryTreePreorderTraversal {
     public List<Integer> preorderTraversal(TreeNode root) {

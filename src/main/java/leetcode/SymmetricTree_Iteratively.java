@@ -1,6 +1,7 @@
 package leetcode;
 
 import java.util.LinkedList;
+import model.TreeNode;
 
 public class SymmetricTree_Iteratively {
     public boolean isSymmetric(TreeNode root) {

@@ -46,3 +46,8 @@ Temporary Items
 .idea
 leetcode.iml
 target
+build
+gradle
+.gradle
+out
+gradlew*
