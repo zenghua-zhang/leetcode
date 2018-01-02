@@ -1,28 +1,29 @@
 package model;
 
-class ListNode {
-    int val;
+public class ListNode {
 
-    public int getVal() {
-        return val;
-    }
+  public int val;
 
-    public void setVal(int val) {
-        this.val = val;
-    }
+  public int getVal() {
+    return val;
+  }
 
-    public ListNode getNext() {
-        return next;
-    }
+  public void setVal(int val) {
+    this.val = val;
+  }
 
-    public void setNext(ListNode next) {
-        this.next = next;
-    }
+  public ListNode getNext() {
+    return next;
+  }
 
-    ListNode next;
+  public void setNext(ListNode next) {
+    this.next = next;
+  }
 
-    ListNode(int x) {
-        val = x;
-        next = null;
-    }
+  public ListNode next;
+
+  public ListNode(int x) {
+    val = x;
+    next = null;
+  }
 }
