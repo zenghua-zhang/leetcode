@@ -1,5 +1,7 @@
 package leetcode;
 
+import model.ListNode;
+
 public class DeleteNodeinaLinkedList {
     public void deleteNode(ListNode node) {
         node.val = node.next.val;

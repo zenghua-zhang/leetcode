@@ -1,5 +1,6 @@
 package leetcode;
 
+import model.ListNode;
 import org.junit.Test;
 
 public class SortList {

@@ -1,5 +1,7 @@
 package leetcode;
 
+import model.ListNode;
+
 public class PalindromeLinkedList_old {
     public boolean isPalindrome(ListNode head) {
         ListNode cloned = clone(head);

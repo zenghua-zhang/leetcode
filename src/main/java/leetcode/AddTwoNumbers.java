@@ -1,5 +1,7 @@
 package leetcode;
 
+import model.ListNode;
+
 public class AddTwoNumbers {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         if (null == l1 || null == l2) {

@@ -1,5 +1,7 @@
 package leetcode;
 
+import model.ListNode;
+
 public class InsertionSortList {
     public ListNode insertionSortList(ListNode head) {
         ListNode sorted = new ListNode(Integer.MIN_VALUE);

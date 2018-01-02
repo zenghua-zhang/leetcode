@@ -1,5 +1,7 @@
 package leetcode;
 
+import model.ListNode;
+
 public class IntersectionTwoLinkedLists {
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
         ListNode a = headA;

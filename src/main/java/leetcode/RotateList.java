@@ -1,5 +1,7 @@
 package leetcode;
 
+import model.ListNode;
+
 public class RotateList {
     public ListNode rotateRight(ListNode head, int n) {
         if (head == null) {

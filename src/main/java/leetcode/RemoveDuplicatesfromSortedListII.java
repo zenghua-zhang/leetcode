@@ -1,5 +1,7 @@
 package leetcode;
 
+import model.ListNode;
+
 public class RemoveDuplicatesfromSortedListII {
     public ListNode deleteDuplicates(ListNode head) {
         head = deleteDuplate(head);

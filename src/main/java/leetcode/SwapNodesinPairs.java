@@ -1,5 +1,7 @@
 package leetcode;
 
+import model.ListNode;
+
 public class SwapNodesinPairs {
     public static void main(String[] args) {
         ListNode head = new ListNode(0);

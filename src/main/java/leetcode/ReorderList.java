@@ -1,6 +1,7 @@
 package leetcode;
 
 import java.util.LinkedList;
+import model.ListNode;
 
 public class ReorderList {
 
