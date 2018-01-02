@@ -30,6 +30,9 @@ class ListNodeHelper {
     }
 
     static void printListNode(ListNode node) {
+        if (!node) {
+            println 'null'
+        }
         def list = []
         while (node != null) {
             list << node.val
