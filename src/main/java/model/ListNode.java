@@ -26,4 +26,29 @@ public class ListNode {
     val = x;
     next = null;
   }
+
+  @Override
+  public boolean equals(Object obj) {
+    if (obj == this) {
+      return true;
+    }
+    if (obj == null && this == null) {
+      return true;
+    }
+    ListNode n = (ListNode) obj;
+    if (n.getVal() != this.getVal()) {
+      return false;
+    }
+    if (n.getNext() == null && this.getNext() == null) {
+      return true;
+    }
+    if (n.getNext() != null && this.getNext() == null) {
+      return false;
+    }
+    if (n.getNext() == null && this.getNext() != null) {
+      return false;
+    }
+
+    return n.getNext().equals(this.getNext());
+  }
 }

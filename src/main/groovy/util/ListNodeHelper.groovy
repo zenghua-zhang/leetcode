@@ -21,7 +21,7 @@ class ListNodeHelper {
     }
 
     static ListNode genFromString(String s) {
-        List list = s.split(",").collect{ it.trim() as Integer}
+        List list = s.split(",").collect { it.trim() as Integer }
         genFromList(list)
     }
 
@@ -39,6 +39,15 @@ class ListNodeHelper {
             node = node.next
         }
         println list.join(", ")
+    }
+
+    static String toString(ListNode node, String joiner = ",") {
+        def list = []
+        while (node != null) {
+            list << node.val
+            node = node.next
+        }
+        list.join(joiner)
     }
 
     static void main(String[] args) {
