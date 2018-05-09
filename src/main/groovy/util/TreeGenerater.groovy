@@ -6,12 +6,12 @@ import org.junit.Test
 import static org.junit.Assert.*
 import static org.hamcrest.Matchers.*
 
-public class TreeGenerator {
-    public static TreeNode gen(String str) {
+class TreeGenerator {
+    static TreeNode gen(String str) {
         println str
     }
 
-    public static TreeNode genTree(Integer[] ints) {
+    static TreeNode genTree(Integer[] ints) {
         def length = ints.length
         if (length < 1) {
             return null;
