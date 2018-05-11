@@ -61,7 +61,7 @@ public class LongestAbsoluteFilePath {
         int child = node.maxLength();
         childMax = Math.max(child, childMax);
       }
-      
+
       if (childMax == -1) {
         return -1;
       }
