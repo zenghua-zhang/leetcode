@@ -2,12 +2,147 @@ package leetcode;
 
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Objects;
+import java.util.Set;
 
 public class SumOfDistancesInTree {
 
   public int[] sumOfDistancesInTree(int N, int[][] edges) {
+    //timeout again
+    int[] ret = new int[N];
+    Node[] nodes = new Node[N];
+    for (int i = 0; i < N; i++) {
+      nodes[i] = new Node(i, N);
+    }
+    for (int[] ints : edges) {
+      Node parent = nodes[ints[0]];
+      Node child = nodes[ints[1]];
+
+      if (child.parent != null && parent.parent != null) {
+        child.reverseParent(null);
+        parent.addChild(child);
+      } else if (child.parent == null) {
+        parent.addChild(child);
+      } else {
+        child.addChild(parent);
+      }
+    }
+
+    Node root = nodes[0].findRoot();
+
+    root.postOrder();
+
+    root.preOrder(ret);
+
+    return ret;
+  }
+
+  private class Node {
+
+    private int n;
+
+    private Set<Node> children;
+
+    private Node parent;
+
+    private int[] distances;
+
+    public Node(int n, int N) {
+      this.n = n;
+      distances = new int[N];
+    }
+
+    public void addChild(Node child) {
+      if (children == null) {
+        children = new HashSet<>();
+      }
+      children.add(child);
+      child.parent = this;
+    }
+
+    public Node findRoot() {
+      if (parent == null) {
+
+        return this;
+      }
+      return parent.findRoot();
+    }
+
+    public void preOrder(int[] ret) {
+      if (parent != null) {
+        for (int i = 0; i < distances.length; i++) {
+          if (distances[i] == 0 && i != n) {
+            distances[i] = parent.distances[i] + 1;
+          }
+        }
+      }
+
+      for (int i : distances) {
+        ret[n] += i;
+      }
+      if (children != null) {
+        for (Node child : children) {
+          child.preOrder(ret);
+        }
+      }
+    }
+
+    public void reverseParent(Node parent) {
+      if (this.parent == null) {
+        return;
+      }
+
+      Node tmp = this.parent;
+      this.parent = null;
+      tmp.reverseParent(this);
+      tmp.children.remove(this);
+      addChild(tmp);
+    }
+
+    public void postOrder() {
+      if (null == children || 0 == children.size()) {
+        return;
+      }
+
+      for (Node child : children) {
+        distances[child.n] = 1;
+        child.postOrder();
+      }
+
+      for (Node child : children) {
+        int childDis = distances[child.n];
+        for (int i = 0; i < distances.length; i++) {
+          if (child.distances[i] != 0) {
+            distances[i] += childDis + child.distances[i];
+          }
+        }
+      }
+    }
+
+    @Override
+    public boolean equals(Object o) {
+      if (this == o) {
+        return true;
+      }
+      if (o == null || getClass() != o.getClass()) {
+        return false;
+      }
+      Node node = (Node) o;
+      return n == node.n;
+    }
+
+    @Override
+    public int hashCode() {
+      return Objects.hash(n);
+    }
+
+  }
+
+
+  public int[] sumOfDistancesInTreeWithMatrix(int N, int[][] edges) {
+    //Timeout in leetcode
     int[] ret = new int[N];
     int[][] matrix = new int[N][N];
     for (int[] ints : edges) {
@@ -50,6 +185,7 @@ public class SumOfDistancesInTree {
   }
 
   public int[] sumOfDistancesInTreeWithClass(int N, int[][] edges) {
+    //Timeout in leetcode
     int[] ret = new int[N];
     Map<Link, Integer> map = new HashMap<>();
     for (int[] ints : edges) {
