@@ -29,8 +29,11 @@ dependencies {
 }
 sourceSets {
     main {
+        java {
+            srcDirs = [] // don't compile Java code twice
+        }
         groovy {
-            srcDirs = ['src/main/groovy']
+            srcDirs = ['src/main/java','src/main/groovy']
         }
     }
     test {

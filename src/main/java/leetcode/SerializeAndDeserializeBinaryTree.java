@@ -29,7 +29,7 @@ public class SerializeAndDeserializeBinaryTree {
 
     // Decodes your encoded data to tree.
     public TreeNode deserialize(String data) {
-      LinkedList list = new LinkedList(Arrays.asList(data.split(",")));
+      LinkedList<String> list = new LinkedList<String>(Arrays.asList(data.split(",")));
 
       return deserialize(list);
     }
