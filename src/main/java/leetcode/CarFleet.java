@@ -2,7 +2,6 @@ package leetcode;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.LinkedList;
 import java.util.List;
 
 public class CarFleet {
@@ -11,20 +10,21 @@ public class CarFleet {
     if (speed.length == 0 || speed.length != position.length) {
       return 0;
     }
-    List<Car> cars = new ArrayList<>();
+    List<Car> queue = new ArrayList<>();
     for (int i = 0; i < position.length; i++) {
-      cars.add(new Car(position[i], speed[i]));
+      queue.add(new Car(position[i], speed[i], target));
     }
 
-    Collections.sort(cars);
-    LinkedList<Car> queue = new LinkedList<>(cars);
+    Collections.sort(queue);
 
     int result = 1;
-    Car ahead = queue.pop();
-    while (!queue.isEmpty()) {
-      Car tmp = queue.pop();
+    int n = 0;
+    Car ahead = queue.get(0);
 
-      if (((double) target - ahead.position) / ahead.speed < ((double) target - tmp.position) / tmp.speed) {
+    while (n++ < position.length - 1) {
+      Car tmp = queue.get(n);
+
+      if (ahead.targetTime < tmp.targetTime) {
         result++;
         ahead = tmp;
       }
@@ -37,11 +37,12 @@ public class CarFleet {
 
     private int position;
 
-    private int speed;
+    private double targetTime;
 
-    private Car(int position, int speed) {
+    private Car(int position, int speed, int target) {
       this.position = position;
-      this.speed = speed;
+
+      this.targetTime = ((double) (target - position)) / speed;
     }
 
     @Override
@@ -51,18 +52,8 @@ public class CarFleet {
       } else if (this.position < that.position) {
         return 1;
       }
-
-      if (this.speed < that.speed) {
-        return -1;
-      } else if (this.speed > that.speed) {
-        return 1;
-      }
       return 0;
     }
   }
 
-  public static void main(String[] args) {
-    CarFleet cf = new CarFleet();
-    System.out.println(cf.carFleet(12, new int[]{10, 8, 0, 5, 3, 10}, new int[]{2, 4, 1, 1, 3, 3}));
-  }
 }
