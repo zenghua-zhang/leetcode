@@ -13,24 +13,21 @@ public class MyCalendarI {
     }
 
     public boolean book(int start, int end) {
-      if (start > end) {
+      if (start >= end) {
         return false;
       }
       Calendar calendar = new Calendar(start, end);
 
       Calendar before = calendars.floor(calendar);
-      if (before != null && (before.start == calendar.start || calendar.start < before.end)) {
-        return false;
-      }
-
       Calendar after = calendars.ceiling(calendar);
 
-      if (after != null && (after.start == calendar.start || calendar.end > after.start)) {
-        return false;
+      if ((before == null || calendar.start >= before.end)
+          && (after == null || calendar.end <= after.start)) {
+        calendars.add(calendar);
+        return true;
       }
 
-      calendars.add(calendar);
-      return true;
+      return false;
     }
 
     private class Calendar implements Comparable<Calendar> {
