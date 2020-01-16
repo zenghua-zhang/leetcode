@@ -1,6 +1,7 @@
 package leetcode;
 
 import java.util.Arrays;
+import java.util.Random;
 
 public class ConstructQuadTree {
 
@@ -106,7 +107,5 @@ public class ConstructQuadTree {
       bottomRight = _bottomRight;
     }
   }
-
-  ;
 
 }
