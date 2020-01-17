@@ -6,31 +6,26 @@ import java.util.Set;
 public class NumberOfOperationsToMakeNetworkConnected {
 
   public int makeConnected(int n, int[][] connections) {
+    if (connections.length < n - 1) {
+      return -1;
+    }
     UnionFind uf = new UnionFind(n);
-
-    int canRemove = 0;
 
     for (int[] connection : connections) {
       int s = connection[0];
       int d = connection[1];
 
-      if (uf.isConnected(s, d)) {
-        canRemove++;
-      } else {
-        uf.union(s, d);
+      uf.union(s, d);
+    }
+
+    int group = 0;
+    for (int i = 0; i < uf.id.length; i++) {
+      if (i == uf.id[i]) {
+        group++;
       }
     }
 
-    Set<Integer> roots = new HashSet<>();
-    for (int i = 0; i < n; i++) {
-      roots.add(uf.findRoot(i));
-    }
-
-    if (roots.size() == 1) {
-      return 0;
-    }
-
-    return roots.size() - 1 <= canRemove ? roots.size() - 1 : -1;
+    return group - 1;
   }
 
   private static class UnionFind {
