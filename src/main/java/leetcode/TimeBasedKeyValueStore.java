@@ -1,8 +1,6 @@
 package leetcode;
 
-import java.util.Map;
 import java.util.TreeMap;
-import java.util.TreeMap.Entry;
 
 public class TimeBasedKeyValueStore {
 
