@@ -4,11 +4,13 @@ class CombinationSumTest extends GroovyTestCase {
 
   private CombinationSum combinationSum
   private CombinationSumII combinationSum2
+  private CombinationSumIII combinationSum3
 
   void setUp() {
     super.setUp()
     combinationSum = new CombinationSum()
     combinationSum2 = new CombinationSumII()
+    combinationSum3 = new CombinationSumIII()
   }
 
   void testCombinationSum() {
@@ -20,8 +22,6 @@ class CombinationSumTest extends GroovyTestCase {
   }
 
   void testCombinationSum2() {
-
-
     def ret = combinationSum2.combinationSum2([10, 1, 2, 7, 6, 1, 5] as int[], 8)
 
     assert ret.size() == 4
@@ -29,5 +29,14 @@ class CombinationSumTest extends GroovyTestCase {
     assert ret.contains([1, 2, 5])
     assert ret.contains([2, 6])
     assert ret.contains([1, 1, 6])
+  }
+
+  void testCombinationSum3() {
+    def ret = combinationSum3.combinationSum3(3, 9)
+
+    assert ret.size() == 3
+    assert ret.contains([1, 2, 6])
+    assert ret.contains([1, 3, 5])
+    assert ret.contains([2, 3, 4])
   }
 }
