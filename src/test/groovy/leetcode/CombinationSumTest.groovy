@@ -5,12 +5,15 @@ class CombinationSumTest extends GroovyTestCase {
   private CombinationSum combinationSum
   private CombinationSumII combinationSum2
   private CombinationSumIII combinationSum3
+  private CombinationSumIV combinationSum4
 
   void setUp() {
     super.setUp()
     combinationSum = new CombinationSum()
     combinationSum2 = new CombinationSumII()
     combinationSum3 = new CombinationSumIII()
+    combinationSum4 = new CombinationSumIV()
+
   }
 
   void testCombinationSum() {
@@ -38,5 +41,13 @@ class CombinationSumTest extends GroovyTestCase {
     assert ret.contains([1, 2, 6])
     assert ret.contains([1, 3, 5])
     assert ret.contains([2, 3, 4])
+  }
+
+  void testCombinationSum4() {
+    int[] nums = [1, 2, 3]
+    assert combinationSum4.combinationSum4(nums, 9) == 149
+    (4..32).forEach {
+      assert combinationSum4.combinationSum4(nums, it) == combinationSum4.combinationSum4BackTracking(nums, it)
+    }
   }
 }
