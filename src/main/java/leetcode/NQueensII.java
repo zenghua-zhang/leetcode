@@ -3,25 +3,25 @@ package leetcode;
 import java.util.ArrayList;
 import java.util.List;
 
-public class NQueens {
+public class NQueensII {
 
   private int max;
 
-  private List<List<String>> result;
+  private int count;
 
-  public List<List<String>> solveNQueens(int n) {
-    this.max = n;
-    result = new ArrayList<>();
+  public int totalNQueens(int n) {
+    count = 0;
+    max = n;
 
     helper(new ArrayList<>(), 0);
 
-    return result;
+    return count;
   }
 
   private void helper(List<String> list, int row) {
 
     if (row >= max) {
-      result.add(new ArrayList<>(list));
+      count++;
       return;
     }
 
